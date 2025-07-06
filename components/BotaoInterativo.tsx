@@ -57,34 +57,49 @@ export default function BotaoPrincipal() {
     setPressionado(false);
   }
 
+  const getEstiloBotao = () => {
+    if (pressionado) {
+        return { opacity: 0.6 };
+    } else {
+        return { opacity: 1.0 }; 
+    }
+  };
+
   return (
-      <View style={styles.container}>
+    
+    <View style={styles.container}>
 
         <Pressable
           onPress={adicionarCliques}
           onPressIn={() => setPressionado(true)}
           onPressOut={() => setPressionado(false)}
           onLongPress={pressionarLongo}
+          style={({ pressed }) => [
+            {
+              opacity: pressed? 0.6 : 1.0, 
+            },
+            styles.buttonImage, 
+          ]}
         >
         <Image
-            source={require('../assets/imagem.png')} // <-- TROQUE PELO NOME DO SEU ARQUIVO
-            style={styles.buttonImage}
+            source={require('../assets/imagem.png')}
+            style={[styles.buttonImage, getEstiloBotao()]} 
           />
         </Pressable>  
 
         <View>
             <Text style={styles.titulo}>
-              Total de cliques: {cliques}
+              Total de gols do Gabigol: {cliques}
             </Text>
             <Text style={styles.titulo}>
-              Tempo total: {tempoDecorrido}
+              Tempo total: {tempoDecorrido} segundos
             </Text>
             <Text style={styles.titulo}>
-              Velocidade de cliques: {velocidadeMedia}
+              Velocidade de cliques: {velocidadeMedia.toFixed(2)}
             </Text>
         </View>
         <Pressable style={styles.button} onPress={(zerarContadores)}>
-            <Text style={styles.button}>ZERAR</Text>
+            <Text style={styles.buttonText}>ZERAR</Text>
         </Pressable>
       </View>
   );

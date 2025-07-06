@@ -11,11 +11,13 @@ export const styles = StyleSheet.create({
         paddingVertical: 12,
         minHeight: 53,
         elevation: 3,
-        backgroundColor: '#d9534f', 
+        backgroundColor: '#175681', 
         marginTop: 20,
       },
 
       buttonText: {
+          alignItems: 'center',
+          justifyContent: 'center',  
           fontSize: 16,
           color: 'white',
           fontWeight: 'bold',

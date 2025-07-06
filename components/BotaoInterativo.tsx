@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Pressable, Alert } from 'react-native';
+import { Text, View, Pressable, Alert, Image } from 'react-native';
 import {styles} from './BotaoInterativoStyle';
+
 
 export default function BotaoPrincipal() {
   const [cliques, setCliques] = useState(0); // 
@@ -39,6 +40,16 @@ export default function BotaoPrincipal() {
     }
   }
 
+  useEffect(() => {
+    if (tempoDecorrido > 0) {
+      const media = cliques / tempoDecorrido;
+      setVelocidadeMedia(media);
+    } else {
+      setVelocidadeMedia(0);
+    }
+  }, [cliques, tempoDecorrido]);
+
+
   function zerarContadores() {
     setCliques(0);
     setTempoDecorrido(0);
@@ -48,13 +59,19 @@ export default function BotaoPrincipal() {
 
   return (
       <View style={styles.container}>
+
         <Pressable
           onPress={adicionarCliques}
           onPressIn={() => setPressionado(true)}
           onPressOut={() => setPressionado(false)}
           onLongPress={pressionarLongo}
         >
+        <Image
+            source={require('../assets/imagem.png')} // <-- TROQUE PELO NOME DO SEU ARQUIVO
+            style={styles.buttonImage}
+          />
         </Pressable>  
+
         <View>
             <Text style={styles.titulo}>
               Total de cliques: {cliques}

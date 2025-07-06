@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
 
     <BotaoPrincipal></BotaoPrincipal>
-    
+     
     <StatusBar style='auto'/>
     </View>
   );

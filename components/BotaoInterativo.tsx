@@ -16,7 +16,7 @@ export default function BotaoPrincipal() {
       timer = setInterval(() => {
         setTempoDecorrido((prevTempo) => prevTempo + 1);
       }, 1000);
-    }
+    } 
     return () => {
       clearInterval(timer);
     };

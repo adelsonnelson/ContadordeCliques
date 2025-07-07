@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import BotaoPrincipal  from './components/BotaoInterativo';
-//Aluno: Carlos Alexandre de Oliveira Reinato
+//Alunos: Carlos Alexandre de Oliveira Reinato, Miguel Sousa Mendonça Rosa e Thiago Lucas Soares Brigida
 //O programa foi dividido em um tsx para a estilização, um tsx para a configuração e exportação do botão e este tsx principal, que exibe o botão. 
 
 export default function App() {

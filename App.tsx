@@ -7,7 +7,7 @@ import BotaoPrincipal  from './components/BotaoInterativo';
 export default function App() {
   return (
     <View style={styles.container}>
-
+      
     <BotaoPrincipal></BotaoPrincipal>
      
     <StatusBar style='auto'/>
